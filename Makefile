@@ -38,7 +38,7 @@ $(OBJ_F)%.o: %.c
 clean:
 	clear;
 	$(MAKE) -C $(LIBFT) fclean;
-	rm -rf $(OBJ)
+	rm -rf $(OBJ_F)
 	@echo "$(YELLOW)\n☓  CLEAN PUSH SWAP$(RESET_COLOR)"
 
 fclean: clean
