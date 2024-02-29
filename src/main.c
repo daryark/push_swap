@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 21:35:06 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/02/23 22:36:35 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/02/29 19:09:27 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ static int  error_check (char **arr)
 
 int main(int ac, char **av)
 {
-    if (ac != 2)
+    if (ac < 2)
         return (0);
-    if(error_check (av[1]))
-        return (0);
-    // ft_printf ("ac: %d, name: %s, just smth: %d\n", ac, av[0], ft_isdigit(ac));
-    return (0);
+    av = *av++;
+    if (ac == 2)
+        av = ft_split(av, ' ');
+    ft_process(av);
+   return (0);
 }

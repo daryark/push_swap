@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 21:36:29 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/02/23 22:35:05 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/02/29 20:07:36 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,14 @@
 
 #include "libft/src/ft_printf/ft_printf.h"
 #include "libft/libft.h"
+
+typedef struct s_stack
+{
+    int                 n;   
+    struct s_dlst   *next;
+}   t_stack;
+
+//!add the functions names to the header file
+//!add the file names to the makefile
 
 #endif
