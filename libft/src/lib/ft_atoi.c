@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 00:58:42 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/02/19 19:57:44 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/01 22:09:32 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *str)
 {
-	int	sign;
-	int	nb;
+	int		sign;
+	long	nb;
 
 	sign = 1;
 	nb = 0;
