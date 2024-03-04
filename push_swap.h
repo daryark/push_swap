@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 21:36:29 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/01 22:28:01 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/03 20:53:13 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,24 @@ typedef struct s_stack
     struct s_stack   *next;
 }   t_stack;
 
-// typedef struct  s_atoi
-// {
-//     long n;
-//     int err;
-// }   t_atoi;
 
 //process create
 void    ft_process(char **av);
+void    ft_sort(t_stack **stack_a);
+//sort
+int     ft_is_sorted(t_stack *stack_a);
 
 //utils
 t_stack *ft_stacknew(int n);
 t_stack *ft_stacklast(t_stack *stack);
 void    ft_stack_addback(t_stack **stack, t_stack *new);
-// t_atoi  ft_safe_atoi(const char *s);
+//cleaning
+void    ft_stackclear(t_stack **stack);
+void    ft_del_stacknode(t_stack *node);
+//handle errors
 void    ft_error(char *message);
 int     ft_s_numeric(char *s);
-int has_duplicate (t_stack *stack_a, int n);
-int not_int_range(long n);
+int     has_dup(t_stack *stack_a, int n);
+int     not_int_range(long n);
 
 #endif

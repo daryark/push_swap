@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 11:54:49 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/01 22:34:13 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/04 13:51:48 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void    ft_error (char *message)
 {
     ft_printf("%s%s%s\n", RED, message, RESET_COLOR);
-    exit (EXIT_SUCCESS);
+    exit (EXIT_FAILURE);
 }
 
 int	ft_s_numeric(char *s)
@@ -27,12 +27,15 @@ int	ft_s_numeric(char *s)
 	return (*s != '\0');
 }
 
-int has_duplicate (t_stack *stack_a, int n)
+int has_dup (t_stack *stack_a, int n)
 {
-    while (stack_a && stack_a->n != n)
-        stack_a = stack_a->next;
-    if (stack_a != NULL)
-        return (1);
+    // while (stack_a && stack_a->n != n)
+    //     stack_a = stack_a->next;
+    if (stack_a && stack_a->n && n)
+        ft_printf ("hey dup\n");
+    //     ft_printf("has_dup: %s\n", stack_a->n);
+    // if (stack_a  && stack_a != NULL)
+    //     return (1);
     return (0);
 }
 

@@ -4,10 +4,11 @@ YELLOW = \033[0;33m
 RESET_COLOR = \033[0m
 
 SRC =	main.c process_create.c \
-		list_utils.c ft_error_check.c
+		list_utils.c ft_error_check.c \
+		ft_sort.c
 OBJ = $(addprefix $(OBJ_F), $(SRC:%.c=%.o))
 
-VPATH = src/ src/utils/
+VPATH = src/ src/utils/ src/sort
 OBJ_F = obj/
 
 CC = gcc

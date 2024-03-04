@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 19:44:47 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/01 11:45:05 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/04 14:23:46 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_stack *ft_stacknew (int n)
         return (NULL);
     node->n = n;
     node->next = NULL;
+    ft_printf("new: %d\n", node->n);
     return (node);
 }
 
@@ -42,4 +43,28 @@ void    ft_stack_addback(t_stack **stack, t_stack *new)
         last = ft_stacklast(*stack);
         last->next = new;
     }
+}
+
+void    ft_del_stacknode(t_stack *node)
+{
+    if (!node)
+        return ;
+    // node->n = 0;
+    // node->next = NULL;
+    free(node);
+}
+
+void    ft_stackclear(t_stack **stack)
+{
+    t_stack *tmp;
+
+    while (*stack)
+    {
+        ft_printf ("clear stack");
+        tmp = (*stack)->next;
+        free(stack);
+        // ft_del_stacknode(*stack);
+        *stack = tmp;
+    }
+    *stack = NULL;
 }

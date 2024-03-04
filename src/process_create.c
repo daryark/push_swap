@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 19:10:00 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/02 00:05:50 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/04 14:28:45 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,18 @@ void    ft_process (char **av)
         if (ft_s_numeric(av[i]))
             ft_error("Error");
         n = ft_atoi(av[i]);
-        if (has_duplicate(stack_a, n) || not_int_range(n))
+        if (has_dup(stack_a, n) || not_int_range(n))
             ft_error("Error dup");
+        else
+            ft_printf("hey, its ok params entered: %d\n", n);
         node = ft_stacknew(n);
         if (!node)
+        {
+            ft_stackclear(&stack_a);
             return ;
+        }
         ft_stack_addback(&stack_a, node);
     }
+    // ft_sort(&stack_a);
+    ft_stackclear(&stack_a);
 }
