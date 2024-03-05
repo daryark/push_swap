@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 21:36:29 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/03 20:53:13 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:28:24 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void    ft_del_stacknode(t_stack *node);
 //handle errors
 void    ft_error(char *message);
 int     ft_s_numeric(char *s);
-int     has_dup(t_stack *stack_a, int n);
+int     has_dup(t_stack *stack_a, long n);
 int     not_int_range(long n);
 
 #endif
