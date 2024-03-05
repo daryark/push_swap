@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 21:36:29 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/05 16:28:24 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/05 17:22:14 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,22 @@ void    ft_process(char **av);
 void    ft_sort(t_stack **stack_a);
 //sort
 int     ft_is_sorted(t_stack *stack_a);
+//operations
+int rotate (t_stack **stack);
+void    ra(t_stack **stack_a);
+void    rb(t_stack **stack_b);
+void    rr(t_stack **stack_a, t_stack **stack_b);
+int rev_rotate (t_stack **stack);
+void    rra(t_stack **stack_a);
+void    rrb(t_stack **stack_b);
+void    rrr(t_stack **stack_a, t_stack **stack_b);
+int swap (t_stack **stack);
+void    sa(t_stack **stack_a);
+void    sb(t_stack **stack_b);
+void    ss(t_stack **stack_a, t_stack **stack_b);
 
+void    pa(t_stack **stack_a, t_stack **stack_b);
+void    pb(t_stack **stack_a, t_stack **stack_b);
 //utils
 t_stack *ft_stacknew(int n);
 t_stack *ft_stacklast(t_stack *stack);

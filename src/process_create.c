@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 19:10:00 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/05 16:30:35 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:32:45 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ void    ft_process (char **av)
         }
         ft_stack_addback(&stack_a, node);
     }
-    // ft_sort(&stack_a);
+    ft_sort(&stack_a);
     ft_stackclear(&stack_a);
 }

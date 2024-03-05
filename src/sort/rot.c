@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 20:03:00 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/03 19:42:36 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/05 17:03:46 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@ int rotate (t_stack **stack)
 {
     t_stack *append;
 
+    if ((*stack) == NULL || (*stack)->next == NULL)
+        return (0);
     append = *stack;
     ft_stacklast((*stack)->next)->next = append;
     append->next = NULL; //head moved
-    
+    return (1);
 }
 
 void    ra(t_stack **stack_a)

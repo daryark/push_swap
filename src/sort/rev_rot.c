@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 02:21:01 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/03 19:42:17 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/05 17:04:04 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,34 @@
 
 int rev_rotate (t_stack **stack)
 {
-    t_stack *append;
+    t_stack *head;
+    t_stack *new_head;
 
-    append = *stack;
-    ft_stacklast((*stack)->next)->next = append;
-    append->next = NULL; //head moved
-    
+    if ((*stack) == NULL || (*stack)->next == NULL)
+        return (0);
+    head = *stack; 
+    while ((*stack)->next->next)
+        *stack = (*stack)->next;
+    new_head = (*stack)->next; 
+    (*stack)->next = NULL;
+    new_head->next = head;
+    return (1);
 }
 
 void    rra(t_stack **stack_a)
 {
     if(rev_rotate(stack_a))
-        ft_printf ("ra\n");
+        ft_printf ("rra\n");
 }
 
 void    rrb(t_stack **stack_b)
 {
     if(rev_rotate(stack_b))
-        ft_printf ("rb\n");
+        ft_printf ("rrb\n");
 }
 
 void    rrr(t_stack **stack_a, t_stack **stack_b)
 {
-    if(rev_rotate(stack_a) || rev_rotate (stack_b))
-        ft_printf ("rr\n");
+    if(rev_rotate(stack_a) || rev_rotate(stack_b))
+        ft_printf ("rrr\n");
 }
