@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:29:49 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/05 14:39:54 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/06 13:22:49 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,5 @@ long	ft_atol(const char *str)
 		nb = (nb * 10) + (*str - '0');
 		str++;
 	}
-    printf("sign %d, nb: %ld, res: %ld\n", sign, nb, nb*sign);
 	return (nb * sign);
 }

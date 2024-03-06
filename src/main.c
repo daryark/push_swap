@@ -6,20 +6,20 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 21:35:06 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/04 14:28:20 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/06 13:15:45 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-    if (ac < 2 || (ac == 2 && av[1][0]))
-        return (0);
-    av++;
-    // if (ac == 2)
-    //     av = ft_split(*av, ' ');
-    ft_process(av);
-   
-   return (0);
+	if (ac < 2 || (ac == 2 && av[1][0]))
+		return (0);
+	av++;
+	if (ac == 2)
+		av = ft_split(*av, ' ');
+	ft_process(av);
+
+	return (0);
 }
