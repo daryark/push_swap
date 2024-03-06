@@ -6,17 +6,17 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:29:49 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/06 13:22:49 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:06:28 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 #include <stdio.h>
 
-long	ft_atol(const char *str)
+long long	ft_atol(const char *str)
 {
-	int		sign;
-	long	nb;
+	int			sign;
+	long long	nb;
 
 	sign = 1;
 	nb = 0;
@@ -35,3 +35,6 @@ long	ft_atol(const char *str)
 	}
 	return (nb * sign);
 }
+
+//long long type is used to have this func cover
+//bigger range as if we already need more than int

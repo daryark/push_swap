@@ -3,12 +3,14 @@ MAGENTA	= \033[0;35m
 YELLOW = \033[0;33m
 RESET_COLOR = \033[0m
 
-SRC =	main.c process_create.c \
-		list_utils.c ft_error_check.c \
-		ft_sort.c
+SRC =	main.c \
+		ft_error_check.c list.c clean.c \
+		ft_sort.c sort_small.c \
+		push.c swap.c rot.c rev_rot.c
 OBJ = $(addprefix $(OBJ_F), $(SRC:%.c=%.o))
 
-VPATH = src/ src/utils/ src/sort
+VPATH = $(SRC_F) $(SRC_F)utils/ $(SRC_F)sort/ $(SRC_F)operations/
+SRC_F = src/
 OBJ_F = obj/
 
 CC = gcc
