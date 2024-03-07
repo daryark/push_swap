@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 17:04:06 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/05 20:51:54 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/07 13:03:39 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ int	push(t_stack **from, t_stack **to)
 void	pa(t_stack **stack_a, t_stack **stack_b)
 {
 	if (push (stack_b, stack_a))
-		ft_printf ("sa\n");
+		ft_printf ("pa\n");
 }
 
 void	pb(t_stack **stack_a, t_stack **stack_b)
 {
 	if (push (stack_a, stack_b))
-		ft_printf ("sb\n");
+		ft_printf ("pb\n");
 }
 
 

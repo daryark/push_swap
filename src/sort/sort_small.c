@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 16:24:16 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/06 17:42:48 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/07 13:26:16 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,18 @@
 
 void	sort3(t_stack **stack_a)
 {
-	int	a;
-	int	b;
-	int	c;
-
-	a = (*stack_a)->n;
-	b = (*stack_a)->next->n;
-	c = (*stack_a)->next->next->n;
-	if ((a > b && a < c)
-		|| (a > b && b > c)
-		|| (a < b && b > c))
+	if (((*stack_a)->n < (*stack_a)->next->next->n
+			&& (*stack_a)->next->n > (*stack_a)->next->next->n) // 1 3 2
+		|| ((*stack_a)->n > (*stack_a)->next->n
+			&& (*stack_a)->n < (*stack_a)->next->next->n) //2 1 3
+		|| ((*stack_a)->n > (*stack_a)->next->n
+			&& (*stack_a)->next->n > (*stack_a)->next->next->n)) // 3 2 1
 		sa(stack_a);
-	if (a < b && a > c)
+	if ((*stack_a)->n < (*stack_a)->next->n
+		&& (*stack_a)->n > (*stack_a)->next->next->n) //2 3 1
 		rra(stack_a);
-	else if (a > c && c > b)
+	else if ((*stack_a)->n > (*stack_a)->next->next->n
+		&& (*stack_a)->next->next->n > (*stack_a)->next->n) // 3 1 2
 		ra(stack_a);
 }
 
