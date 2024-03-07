@@ -6,19 +6,19 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 11:54:49 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/05 16:30:26 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/07 15:40:31 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void    ft_error (char *message)
+void	ft_error(char *message)
 {
-    ft_printf("%s%s%s\n", RED, message, RESET_COLOR);
-    exit (EXIT_FAILURE);
+	ft_printf("%s%s%s\n", RED, message, RESET_COLOR);
+	exit(EXIT_FAILURE);
 }
 
-int	ft_s_numeric(char *s)
+int	ft_is_numeric(char *s)
 {
 	if (*s && (*s == '-' || *s == '+'))
 		s++;
@@ -27,16 +27,16 @@ int	ft_s_numeric(char *s)
 	return (*s != '\0');
 }
 
-int has_dup (t_stack *stack_a, long n)
+int	has_dup(t_stack *stack_a, long n)
 {
-    while (stack_a && stack_a->n != n)
-        stack_a = stack_a->next;
-    if (stack_a  && stack_a->n)
-        return (1);
-    return (0);
+	while (stack_a && stack_a->n != n)
+		stack_a = stack_a->next;
+	if (stack_a && stack_a->n)
+		return (1);
+	return (0);
 }
 
-int not_int_range(long n)
+int	not_int_range(long n)
 {
-    return (n < INT_MIN || n > INT_MAX);
+	return (n < INT_MIN || n > INT_MAX);
 }
