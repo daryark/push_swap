@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 17:04:06 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/07 13:03:39 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/08 12:45:53 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ int	push(t_stack **from, t_stack **to)
 		return (0);
 	head_to = *to;
 	*to = *from;
-	if ((*from)->next != NULL)
-		*from = (*from)->next;
+	*from = (*from)->next;
 	(*to)->next = head_to;
 	return (1);
 }

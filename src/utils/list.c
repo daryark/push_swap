@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 19:44:47 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/07 13:33:12 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/08 12:56:06 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_stack	*ft_stacknew(int n)
 		return (NULL);
 	node->n = n;
 	node->next = NULL;
+	node->gap = INT_MIN;
 	return (node);
 }
 
