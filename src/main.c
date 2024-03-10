@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 21:35:06 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/07 15:38:32 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/10 18:13:22 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_process(char **av)
 			ft_error("Error");
 		n = ft_atol(av[i]);
 		if (has_dup(stack_a, n) || not_int_range(n))
-			ft_error("Error dup");
+			ft_error("Error dup || not in range");
 		ft_stack_addback(&stack_a, ft_stacknew(n));
 		if (!stack_a)
 			return ;

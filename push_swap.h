@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 21:36:29 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/08 12:51:09 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/10 18:39:00 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 typedef struct s_stack
 {
 	int				n;
-	int				gap;
+	
 	struct s_stack	*next;
 }	t_stack;
 
@@ -35,10 +35,8 @@ void	ft_process(char **av);
 //sort
 void	ft_sort(t_stack **stack_a);
 int		ft_is_sorted(t_stack *stack_a);
-void	sort_small(t_stack **stack_a, t_stack **stack_b);
-void	sort3(t_stack **stack_a);, 
-void	sort4(t_stack **stack_a, t_stack **stack_b);
-void	sort5(t_stack **stack_a, t_stack **stack_b);
+void	sort3(t_stack **stack_a);
+void	sort_big(len, t_stack **stack_a, t_stack **stack_b);
 //operations
 int		rotate(t_stack **stack);
 void	ra(t_stack **stack_a);
