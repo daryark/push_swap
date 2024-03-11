@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 21:36:29 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/11 12:36:14 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/11 15:16:46 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_stack	*ft_stacklast(t_stack *stack);
 void	ft_stack_addback(t_stack **stack, t_stack *new);
 int		ft_stacklen(t_stack *stack);
 //sort helpers
-void	set_idx(int	stack_len, t_stack *stack);
+void	set_idx(int stack_len, t_stack *stack);
 t_stack	*find_max(t_stack *stack);
 //sort
 void	ft_sort(t_stack **stack_a);

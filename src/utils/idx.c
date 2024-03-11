@@ -6,11 +6,12 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 12:04:52 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/11 13:14:21 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/11 15:25:50 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
+#include <stdio.h>
 
 t_stack	*find_max(t_stack *stack)
 {
@@ -39,28 +40,25 @@ void	set_idx(int stack_len, t_stack *stack)
 {
 	t_stack	*head;
 	t_stack	*max;
-	int		diff;
 	t_stack	*curr_node;
+	int		diff;
 
-	head = stack;
 	max = find_max(stack);
 	reset_idx(stack);
-	max->i = 0;
 	while (stack_len--)
 	{
+		max->i = stack_len;
 		diff = INT_MAX;
-		while (stack)
+		head = stack;
+		while (head)
 		{
-			if ((max->n - stack->n) < diff && stack->i == -1)
+			if ((max->n - head->n) < diff && head->i == -1)
 			{
-				diff = (max->n - stack->n);
-				curr_node = stack;
+				diff = (max->n - head->n);
+				curr_node = head;
 			}
-			stack = stack->next;
+			head = head->next;
 		}
-		stack = head;
-		curr_node->i = (ft_stacklen(stack) - stack_len);
 		max = curr_node;
-		ft_printf("stack_len %d\n", stack_len);
 	}
 }
