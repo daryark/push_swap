@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 00:29:13 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/10 22:43:29 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/11 13:01:54 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,14 @@ void	ft_sort(t_stack **stack_a)
 		ft_stackclear(&stack_b);
 		return ;
 	}
-	set_idx(*stack_a);
 	len = ft_stacklen(*stack_a);
+	set_idx(len, *stack_a);
+	t_stack *head_a = *stack_a;
+	while (head_a)
+	{
+		ft_printf("idx: %d\n", head_a->i);
+		head_a = head_a->next;
+	}
 	if (len == 2)
 		sa(stack_a);
 	else if (len == 3)
