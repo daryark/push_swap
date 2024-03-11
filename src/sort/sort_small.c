@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 16:24:16 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/10 21:34:37 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/11 12:15:56 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,10 +91,13 @@ void	refresh_data(t_stack **stack_a, t_stack **stack_b)
 
 void	sort_big(int len, t_stack **stack_a, t_stack **stack_b)
 {
-	ft_printf("sort big\n");
+	t_stack	*max;
+
+	max = find_max(*stack_a);
+	ft_printf("sort big, max: %d\n", max->n);
+
 	while (len-- > 3)
 		pb(stack_a, stack_b);
 	sort3(stack_a);
 	refresh_data(stack_a, stack_b);
-	
 }

@@ -1,44 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error_check.c                                   :+:      :+:    :+:   */
+/*   idx.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/01 11:54:49 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/11 12:23:10 by dyarkovs         ###   ########.fr       */
+/*   Created: 2024/03/11 12:04:52 by dyarkovs          #+#    #+#             */
+/*   Updated: 2024/03/11 12:24:51 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	ft_error(char *message)
+t_stack	*find_max(t_stack *stack)
 {
-	ft_printf("%s%s%s\n", RED, message, RESET_COLOR);
-	exit(EXIT_FAILURE);
-}
+	t_stack	*max;
 
-int	ft_is_numeric(char *s)
-{
-	if (*s && (*s == '-' || *s == '+'))
-		s++;
-	while (*s && ft_isdigit(*s))
-		s++;
-	return (*s != '\0');
-}
-
-int	has_dup(t_stack *stack_a, long n)
-{
-	while (stack_a)
+	max = stack;
+	while (stack)
 	{
-		if (stack_a->n == n)
-			return (1);
-		stack_a = stack_a->next;
+		if (max->n < stack->n)
+			max = stack;
+		stack = stack->next;
 	}
-	return (0);
+	return (max);
 }
 
-int	not_int_range(long n)
+void	set_idx(t_stack *stack)
 {
-	return (n < INT_MIN || n > INT_MAX);
+	int	i;
+
+	i = 0;
+	while (stack)
+	{
+		ft_printf("idx %d\n", i);
+		stack = stack->next;
+		i++;
+	}
 }
