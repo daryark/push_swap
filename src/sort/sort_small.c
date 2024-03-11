@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 16:24:16 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/11 12:15:56 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/11 16:55:51 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,24 +63,28 @@ void	sort3(t_stack **stack_a)
 		ra(stack_a);
 }
 
-// void	sort_small(t_stack **stack_a, t_stack **stack_b)
-// {
-// 	int	len;
+void	quick_sort(int stack_len, t_stack **stack_a, t_stack **stack_b)
+{
+	int	curr_len;
 
-// 	len = ft_stacklen(*stack_a);
-// 	if (len == 2)
-// 		sa(stack_a);
-// 	else if (len == 3)
-// 		sort3(stack_a);
-// 	else
-// 		sort_big(stack_a, stack_b);
-// 	//.*just to show the sorted stack result, !not needed loop!
-// 	while (*stack_a)
-// 	{
-// 		ft_printf("%ssorted: %d%s\n", GREEN, (*stack_a)->n, RESET_COLOR);
-// 		.*stack_a = (*stack_a)->next;
-// 	}
-// }
+	curr_len = stack_len;
+	while (stack_len > 3)
+	{
+		ft_printf("----------------------\nstacklen: %d\n", stack_len);
+		if (curr_len > stack_len / 2) //need to be while loop instead of if
+		{ //but the currentlen of stack_a, doesn't changes for some reason
+			if ((*stack_a)->i < stack_len / 2)
+				pb(stack_a, stack_b);
+			else
+				ra(stack_a);
+			curr_len = ft_stacklen(*stack_a);
+			ft_printf("stack_a: %d", (*stack_a)->n);
+		ft_printf("\ncurrlen: %d\n", curr_len);
+		}
+		stack_len /= 2;
+		ft_printf("\n");
+	}
+}
 
 void	refresh_data(t_stack **stack_a, t_stack **stack_b)
 {
@@ -89,15 +93,14 @@ void	refresh_data(t_stack **stack_a, t_stack **stack_b)
 	ft_printf("refresh data\n");
 }
 
-void	sort_big(int len, t_stack **stack_a, t_stack **stack_b)
+void	sort_big(int stack_len, t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*max;
 
 	max = find_max(*stack_a);
 	ft_printf("sort big, max: %d\n", max->n);
 
-	while (len-- > 3)
-		pb(stack_a, stack_b);
+	quick_sort(stack_len, stack_a, stack_b);
 	sort3(stack_a);
 	refresh_data(stack_a, stack_b);
 }
