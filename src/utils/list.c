@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 19:44:47 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/08 12:56:06 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/10 22:49:23 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,18 @@ t_stack	*ft_stacknew(int n)
 	if (!node)
 		return (NULL);
 	node->n = n;
+	node->i = 0;
 	node->next = NULL;
-	node->gap = INT_MIN;
 	return (node);
+}
+
+void	set_idx(t_stack *stack)
+{
+	
+	while (*stack)
+	{
+		
+	}
 }
 
 t_stack	*ft_stacklast(t_stack *stack)
