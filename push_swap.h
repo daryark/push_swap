@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 21:36:29 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/11 15:38:29 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/12 18:38:58 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	ft_sort(t_stack **stack_a);
 void	sort3(t_stack **stack_a);
 void	sort_big(int stack_len, t_stack **stack_a, t_stack **stack_b);
 void	quick_sort(int stack_len, t_stack **stack_a, t_stack **stack_b);
+void	turk_sort(t_stack **stack_a, t_stack **stack_b);
 //operations
 int		rotate(t_stack **stack);
 void	ra(t_stack **stack_a);
