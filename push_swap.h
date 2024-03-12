@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 21:36:29 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/12 18:38:58 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/12 20:59:27 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_stack
 {
 	int				n;
 	int				i;
+	t_stack			*target;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -44,6 +45,7 @@ void	ft_stack_addback(t_stack **stack, t_stack *new);
 int		ft_stacklen(t_stack *stack);
 //sort helpers
 void	set_idx(int stack_len, t_stack *stack);
+void	set_target_node(t_stack *stack_a, t_stack *stack_b);
 t_stack	*find_max(t_stack *stack);
 int		ft_is_sorted(t_stack *stack_a);
 //sort
