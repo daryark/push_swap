@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 12:04:52 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/11 15:25:50 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/12 18:28:44 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,3 +62,11 @@ void	set_idx(int stack_len, t_stack *stack)
 		max = curr_node;
 	}
 }
+
+	// head = stack;
+	// while (head)
+	// {
+	// 	ft_printf("%d, ", head->n);
+	// 	head = head->next;
+	// }
+	// printf("\n");

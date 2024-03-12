@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 16:24:16 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/11 16:55:51 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/12 18:29:47 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,24 +65,28 @@ void	sort3(t_stack **stack_a)
 
 void	quick_sort(int stack_len, t_stack **stack_a, t_stack **stack_b)
 {
-	int	curr_len;
+	int	mid;
 
-	curr_len = stack_len;
+	mid = stack_len / 2;
 	while (stack_len > 3)
 	{
 		ft_printf("----------------------\nstacklen: %d\n", stack_len);
-		if (curr_len > stack_len / 2) //need to be while loop instead of if
-		{ //but the currentlen of stack_a, doesn't changes for some reason
-			if ((*stack_a)->i < stack_len / 2)
+		if (stack_len > mid)
+		{
+			if ((*stack_a)->i <= mid)
+			{
 				pb(stack_a, stack_b);
+				stack_len--;
+			}
 			else
 				ra(stack_a);
-			curr_len = ft_stacklen(*stack_a);
-			ft_printf("stack_a: %d", (*stack_a)->n);
-		ft_printf("\ncurrlen: %d\n", curr_len);
 		}
-		stack_len /= 2;
-		ft_printf("\n");
+		else
+		{
+			mid /= 2;
+			set_idx(stack_len, *stack_a);
+			ft_printf("mid: %d\n", mid);
+		}
 	}
 }
 
