@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 21:36:29 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/13 22:13:23 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/13 23:22:52 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int		ft_stacklen(t_stack *stack);
 void	set_idx(int stack_len, t_stack *stack);
 void	set_target_node(t_stack *stack_a, t_stack *stack_b);
 void	set_cost(t_stack *stack);
+t_stack *final_cost(t_stack *stack_b);
 t_stack	*find_max(t_stack *stack);
 int		ft_is_sorted(t_stack *stack_a);
 //sort

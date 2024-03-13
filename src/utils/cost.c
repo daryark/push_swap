@@ -6,12 +6,18 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 21:53:46 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/13 22:49:46 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/13 23:34:25 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
+int	ft_abs(int	n)
+{
+	if (n < 0)
+		return (-n);
+	return n;
+}
 void	set_cost(t_stack *stack)
 {
 	int	mid;
@@ -34,4 +40,23 @@ void	set_cost(t_stack *stack)
 		cost++;
 		stack = stack->next;
 	}
+}
+
+t_stack	*final_cost(t_stack *stack_b)
+{
+	t_stack	*cheapest_node;
+	int		amnt;
+
+	cheapest_node = NULL;
+	amnt = MAX_INT;
+	while (stack_b)
+	{
+		if (amnt > (ft_abs(stack_b->n) + ft_abs(stack_b->target->n)))
+		{
+			amnt = ft_abs(stack_b->n) + ft_abs(stack_b->target->n);
+			cheapest_node = stack_b;
+		}
+		stack_b = stack_b->next;
+	}
+	return (cheapest_node);
 }
