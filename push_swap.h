@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 21:36:29 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/12 20:59:27 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/13 15:32:04 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_stack
 {
 	int				n;
 	int				i;
-	t_stack			*target;
+	struct s_stack	*target;
 	struct s_stack	*next;
 }	t_stack;
 

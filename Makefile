@@ -4,7 +4,7 @@ YELLOW = \033[0;33m
 RESET_COLOR = \033[0m
 
 SRC =	main.c \
-		ft_error_check.c list.c clean.c idx.c \
+		ft_error_check.c list.c clean.c idx.c target.c \
 		ft_sort.c sort_big.c \
 		push.c swap.c rot.c rev_rot.c
 OBJ = $(addprefix $(OBJ_F), $(SRC:%.c=%.o))
