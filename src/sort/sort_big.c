@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 16:24:16 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/13 21:36:41 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/13 22:14:16 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,11 @@ void	turk_sort(t_stack **stack_a, t_stack **stack_b)
 	}
 	ft_printf("\n--------------------\n");
 	set_target_node(*stack_a, *stack_b);
+	ft_printf("\n COST STACK A\n");
+	set_cost(*stack_a);
+	ft_printf("\n COST STACK B\n");
+	set_cost(*stack_b);
+
 }
 
 void	refresh_data(t_stack **stack_a, t_stack **stack_b)
