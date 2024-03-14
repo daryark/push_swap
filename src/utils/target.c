@@ -6,12 +6,13 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 20:50:36 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/13 21:42:10 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/14 17:16:46 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
+//if this funciton is actually used somewhere?? if no - use it when init stack and pb!
 void	reset_target_node(t_stack *stack_b)
 {
 	while (stack_b)
@@ -23,15 +24,14 @@ void	reset_target_node(t_stack *stack_b)
 
 void	set_target_node(t_stack *stack_a, t_stack *stack_b)
 {
-	//Do i need to reset to default targets? or use the prev ones for comparison on next rounds?
 	t_stack	*head_a;
 	int		diff;
 
 	while (stack_b)
 	{
-		diff = stack_a->n - stack_b->n; //first (a->n - b->n) = diff
-		stack_b->target = stack_a; //first a->n = target
-		head_a = stack_a->next; //move a to next
+		diff = stack_a->n - stack_b->n;
+		stack_b->target = stack_a;
+		head_a = stack_a->next;
 		while (head_a)
 		{
 			if ((diff < 0 && (head_a->n - stack_b->n) < diff)

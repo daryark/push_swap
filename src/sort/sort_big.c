@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 16:24:16 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/13 23:34:01 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/14 17:14:50 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,8 @@ void	turk_sort(t_stack **stack_a, t_stack **stack_b)
 	set_cost(*stack_b);
 	cheapest_node = final_cost(*stack_b);
 
+	ft_printf("cheapest node: %d, target: %d\n", cheapest_node->n, cheapest_node->target->n);
+
 }
 
 void	refresh_data(t_stack **stack_a, t_stack **stack_b)
@@ -118,7 +120,6 @@ void	sort_big(int stack_len, t_stack **stack_a, t_stack **stack_b)
 	t_stack	*max;
 
 	max = find_max(*stack_a);
-	// ft_printf("sort big, max: %d\n", max->n);
 	quick_sort(stack_len, stack_a, stack_b);
 	sort3(stack_a);
 	turk_sort(stack_a, stack_b);
