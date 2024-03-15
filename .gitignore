@@ -3,4 +3,4 @@
 /**/*.a
 push_swap
 .vscode
-./push_swap_visualiser
+push_swap_visualiser/
