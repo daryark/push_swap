@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:21:49 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/06 16:05:10 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/15 10:48:51 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int			ft_isascii(int c);
 int			ft_isprint(int c);
 int			ft_tolower(int c);
 int			ft_toupper(int c);
+int			ft_abs(int n);
 //str
 size_t		ft_strlen(const char *s);
 void		*ft_memset(void *p, int c, size_t len);

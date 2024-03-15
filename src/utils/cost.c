@@ -6,18 +6,11 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 21:53:46 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/14 20:26:20 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/15 13:08:16 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
-
-int	ft_abs(int n)
-{
-	if (n < 0)
-		return (-n);
-	return (n);
-}
 
 //return -1 if both below middle,
 //		  1 if both above middle,
@@ -91,6 +84,25 @@ void	set_cost(t_stack *stack)
 	}
 }
 
+int		max_move(t_stack *stack_b)
+{
+	if (stack_b->i < 0)
+	{
+		if (stack_b->i < stack_b->target->i)
+			return (ft_abs(stack_b->i));
+		else
+			return (stack_b->target->i);
+	}
+	else if (stack_b->i > 0)
+	{
+		if (stack_b->i > stack_b->target->i)
+			return (stack_b->i);
+		else
+			return (stack_b->target->i);
+	}
+	return (0);
+}
+
 t_stack	*final_cost(t_stack *stack_b)
 {
 	t_stack	*cheapest_node;
@@ -103,13 +115,14 @@ t_stack	*final_cost(t_stack *stack_b)
 	while (stack_b)
 	{
 		move_both = position_both(stack_b);
-		if (move_both && amnt > move_both)
+		//if (move_both && max_move(stack_b) <= amnt)
+		if (move_both && max_move(stack_b) < amnt)
 		{
 			if ((move_both < 0 && (stack_b->i < stack_b->target->i))
 				|| (move_both > 0 && (stack_b->i > stack_b->target->i)))
-				amnt = stack_b->i;
+				amnt = ft_abs(stack_b->i);
 			else
-				amnt = stack_b->target->i;
+				amnt = ft_abs(stack_b->target->i);
 			cheapest_node = stack_b;
 		}
 		else if (amnt > (ft_abs(stack_b->i) + ft_abs(stack_b->target->i)))

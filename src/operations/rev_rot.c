@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 02:21:01 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/14 19:35:45 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/15 13:19:19 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ void	rrb(t_stack **stack_b)
 
 void	rrr(t_stack **stack_a, t_stack **stack_b)
 {
-	if (rev_rotate(stack_a) || rev_rotate(stack_b))
+	if (rev_rotate(stack_a) && rev_rotate(stack_b))
 		ft_printf ("rrr\n");
 }

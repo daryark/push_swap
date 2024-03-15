@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 00:29:13 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/12 18:44:50 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/15 12:37:45 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	sort3(t_stack **stack_a)
 	ft_printf("THREE SORTED\n---------------\n");
 }
 
-int	ft_is_sorted(t_stack *stack_a)
+int	is_sorted(t_stack *stack_a)
 {
 	while (stack_a && stack_a->next)
 	{
@@ -47,7 +47,7 @@ void	ft_sort(t_stack **stack_a)
 	int		len;
 
 	stack_b = NULL;
-	if (ft_is_sorted(*stack_a))
+	if (is_sorted(*stack_a))
 	{
 		ft_printf("%sSORTED%s\n", GREEN, RESET_COLOR);
 		ft_stackclear(&stack_b);
@@ -60,7 +60,7 @@ void	ft_sort(t_stack **stack_a)
 	else if (len == 3)
 		sort3(stack_a);
 	else
-		sort_big(len, stack_a, &stack_b);
+		sort_big( stack_a, &stack_b);
 	while (*stack_a)
 	{
 		ft_printf("%ssorted: %d%s\n", GREEN, (*stack_a)->n, RESET_COLOR);

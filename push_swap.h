@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 21:36:29 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/14 21:44:57 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/15 12:37:51 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ void	set_cost(t_stack *stack);
 int		position_both(t_stack *node_b);
 t_stack	*final_cost(t_stack *stack_b);
 t_stack	*find_max(t_stack *stack);
-int		ft_is_sorted(t_stack *stack_a);
+int		is_sorted(t_stack *stack_a);
 //sort
 void	ft_sort(t_stack **stack_a);
 void	sort3(t_stack **stack_a);
-void	sort_big(int stack_len, t_stack **stack_a, t_stack **stack_b);
+void	sort_big(t_stack **stack_a, t_stack **stack_b);
 void	quick_sort(int stack_len, t_stack **stack_a, t_stack **stack_b);
 void	turk_sort(t_stack **stack_a, t_stack **stack_b);
 void	do_dbl_rot_amnt(int amnt, t_stack *cheapest, t_stack **a, t_stack **b);
