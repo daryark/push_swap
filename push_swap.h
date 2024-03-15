@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 21:36:29 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/15 12:37:51 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/15 15:12:46 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int		push(t_stack **from, t_stack **to);
 void	pa(t_stack **stack_a, t_stack **stack_b);
 void	pb(t_stack **stack_a, t_stack **stack_b);
 //cleaning
-void	ft_stackclear(t_stack **stack);
+void	ft_stackclean(t_stack **stack);
 void	ft_del_stacknode(t_stack *node);
 
 #endif

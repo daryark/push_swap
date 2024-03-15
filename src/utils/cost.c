@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 21:53:46 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/15 13:08:16 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/15 15:30:21 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	position_both(t_stack *node_b)
 		res = -1;
 	else
 		res = 0;
-	ft_printf("cheapest pos: %d, target pos: %d, both: %d\n", node_b->i, node_b->target->i, res);
+	// ft_printf("cheapest pos: %d, target pos: %d, both: %d\n", node_b->i, node_b->target->i, res);
 	return (res);
 	//--------------------------------------------
 	// int	both_above;
@@ -69,7 +69,7 @@ void	set_cost(t_stack *stack)
 	stack_len = ft_stacklen(stack);
 	mid = stack_len / 2 + 1;
 	cost = 0;
-	ft_printf("stack_len: %d\n", stack_len);
+	// ft_printf("stack_len: %d\n", stack_len);
 	while (stack)
 	{
 		if (!mid && stack_len % 2 == 1)
@@ -77,7 +77,7 @@ void	set_cost(t_stack *stack)
 		else if (!mid && stack_len % 2 == 0)
 			cost = (cost - 2) * -1;
 		stack->i = cost;
-		ft_printf("n: %d, cost: %d, 	|			mid: %d\n", stack->n, stack->i, mid);
+		// ft_printf("n: %d, cost: %d, 	|			mid: %d\n", stack->n, stack->i, mid);
 		mid--;
 		cost++;
 		stack = stack->next;
@@ -111,12 +111,12 @@ t_stack	*final_cost(t_stack *stack_b)
 
 	cheapest_node = NULL;
 	amnt = INT_MAX;
-	ft_printf("\n----------------\n");
+	// ft_printf("\n----------------\n");
 	while (stack_b)
 	{
 		move_both = position_both(stack_b);
-		//if (move_both && max_move(stack_b) <= amnt)
-		if (move_both && max_move(stack_b) < amnt)
+		// if (move_both && max_move(stack_b) < amnt)
+		if (move_both && max_move(stack_b) <= amnt)
 		{
 			if ((move_both < 0 && (stack_b->i < stack_b->target->i))
 				|| (move_both > 0 && (stack_b->i > stack_b->target->i)))
@@ -132,7 +132,7 @@ t_stack	*final_cost(t_stack *stack_b)
 		}
 		stack_b = stack_b->next;
 	}
-	ft_printf("final smallest cost: %d, node_to_move: %d\n", amnt, cheapest_node->n);
+	// ft_printf("final smallest cost: %d, node_to_move: %d\n", amnt, cheapest_node->n);
 	return (cheapest_node);
 }
 	//*check again if final cost and position_both works correct!!!

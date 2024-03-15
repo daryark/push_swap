@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 15:09:41 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/06 15:10:00 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/15 15:15:01 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ void	ft_del_stacknode(t_stack *node)
 	free(node);
 }
 
-void	ft_stackclear(t_stack **stack)
+void	ft_stackclean(t_stack **stack)
 {
 	t_stack	*tmp;
 
 	while (*stack)
 	{
-		ft_printf ("clear stack | ");
+		// ft_printf ("clear stack | ");
 		tmp = (*stack)->next;
 		free(*stack);
 		// ft_del_stacknode(*stack);

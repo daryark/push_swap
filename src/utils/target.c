@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 20:50:36 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/15 12:10:13 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/15 14:39:29 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	set_target_node(t_stack *stack_a, t_stack *stack_b)
 			}
 			head_a = head_a->next;
 		}
-		ft_printf("b: %d, target a: %d\n", stack_b->n, stack_b->target->n);
+		// ft_printf("b: %d, target a: %d\n", stack_b->n, stack_b->target->n);
 		stack_b = stack_b->next;
 	}
 }

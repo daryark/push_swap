@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 19:44:47 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/15 12:59:30 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/15 14:41:21 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,6 @@ int	ft_stacklen(t_stack *stack)
 		len++;
 		stack = stack->next;
 	}
-	ft_printf("len: %d\n", len);
+	// ft_printf("len: %d\n", len);
 	return (len);
 }

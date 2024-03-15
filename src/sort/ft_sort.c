@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 00:29:13 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/15 12:37:45 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/15 15:14:50 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	sort3(t_stack **stack_a)
 	else if ((*stack_a)->n > (*stack_a)->next->next->n
 		&& (*stack_a)->next->next->n > (*stack_a)->next->n) // 3 1 2
 		ra(stack_a);
-	ft_printf("THREE SORTED\n---------------\n");
+	// ft_printf("THREE SORTED\n---------------\n");
 }
 
 int	is_sorted(t_stack *stack_a)
@@ -50,7 +50,7 @@ void	ft_sort(t_stack **stack_a)
 	if (is_sorted(*stack_a))
 	{
 		ft_printf("%sSORTED%s\n", GREEN, RESET_COLOR);
-		ft_stackclear(&stack_b);
+		ft_stackclean(&stack_b);
 		return ;
 	}
 	len = ft_stacklen(*stack_a);
@@ -61,9 +61,10 @@ void	ft_sort(t_stack **stack_a)
 		sort3(stack_a);
 	else
 		sort_big( stack_a, &stack_b);
-	while (*stack_a)
-	{
-		ft_printf("%ssorted: %d%s\n", GREEN, (*stack_a)->n, RESET_COLOR);
-		*stack_a = (*stack_a)->next;
-	}
+	// while (*stack_a)
+	// {
+	// 	ft_printf("%ssorted: %d%s\n", GREEN, (*stack_a)->n, RESET_COLOR);
+	// 	*stack_a = (*stack_a)->next;
+	// }
+	ft_stackclean(&stack_b);
 }
