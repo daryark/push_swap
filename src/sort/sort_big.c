@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 16:24:16 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/15 15:15:15 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/15 19:40:19 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,6 @@ void	do_rot_amnt(t_stack *node, t_stack **stack_a, t_stack **stack_b)
 		}
 		node = node->target;
 	}
-	// if (!*stack_b)
-		// ft_printf("%sbefore comparisons%s\n", RED, RESET_COLOR);
 	if (node->i > 0)
 	{
 		while (node->i-- > 0)
@@ -97,8 +95,6 @@ void	do_rot_amnt(t_stack *node, t_stack **stack_a, t_stack **stack_b)
 
 void	turk_sort(t_stack **stack_a, t_stack **stack_b)
 {
-	// t_stack	*head_a;
-	// t_stack	*head_b;
 	t_stack	*cheapest;
 	int		move_both;
 

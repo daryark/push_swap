@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 21:53:46 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/15 15:30:21 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/15 15:55:37 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,25 +107,26 @@ t_stack	*final_cost(t_stack *stack_b)
 {
 	t_stack	*cheapest_node;
 	int		amnt;
-	int		move_both;
+	// int		move_both;
 
 	cheapest_node = NULL;
 	amnt = INT_MAX;
 	// ft_printf("\n----------------\n");
 	while (stack_b)
 	{
-		move_both = position_both(stack_b);
-		// if (move_both && max_move(stack_b) < amnt)
-		if (move_both && max_move(stack_b) <= amnt)
-		{
-			if ((move_both < 0 && (stack_b->i < stack_b->target->i))
-				|| (move_both > 0 && (stack_b->i > stack_b->target->i)))
-				amnt = ft_abs(stack_b->i);
-			else
-				amnt = ft_abs(stack_b->target->i);
-			cheapest_node = stack_b;
-		}
-		else if (amnt > (ft_abs(stack_b->i) + ft_abs(stack_b->target->i)))
+		// move_both = position_both(stack_b);
+		// // if (move_both && max_move(stack_b) < amnt)
+		// if (move_both && max_move(stack_b) <= amnt)
+		// {
+		// 	if ((move_both < 0 && (stack_b->i < stack_b->target->i))
+		// 		|| (move_both > 0 && (stack_b->i > stack_b->target->i)))
+		// 		amnt = ft_abs(stack_b->i);
+		// 	else
+		// 		amnt = ft_abs(stack_b->target->i);
+		// 	cheapest_node = stack_b;
+		// }
+		// else
+		 if (amnt > (ft_abs(stack_b->i) + ft_abs(stack_b->target->i)))
 		{
 			amnt = ft_abs(stack_b->i) + ft_abs(stack_b->target->i);
 			cheapest_node = stack_b;
