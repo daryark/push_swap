@@ -6,37 +6,75 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 16:24:16 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/15 19:40:19 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/16 03:55:29 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	quick_sort(int stack_len, t_stack **stack_a, t_stack **stack_b)
+void	print_stack(t_stack *stack)
 {
-	int	mid;
-
-	mid = stack_len / 2;
-	while (stack_len > 3)
+	while (stack)
 	{
-		// ft_printf("----------------------\nstacklen: %d\n", stack_len);
-		if (stack_len > mid)
-		{
-			if ((*stack_a)->i <= mid)
-			{
-				pb(stack_a, stack_b);
-				stack_len--;
-			}
-			else
-				ra(stack_a);
-		}
-		else
-		{
-			mid /= 2;
-			set_idx(stack_len, *stack_a);
-			// ft_printf("mid: %d\n", mid);
-		}
+		ft_printf("n: %d	i: %d\n", stack->n, stack->i);
+		stack= stack->next;
 	}
+}
+
+void	quick_sort(t_stack **stack_a, t_stack **stack_b)
+{
+	int		pivot;
+
+	set_idx(ft_stacklen(*stack_a), *stack_a);
+	if (is_sorted(*stack_a))
+		return ;
+	if (ft_stacklen(*stack_a) <= 3)
+	{
+		if (!is_sorted(*stack_a))
+			sort3(stack_a);
+		return ;
+	}
+	pivot = ft_stacklen(*stack_a) / 2;
+	while (ft_stacklen(*stack_a) != pivot && ft_stacklen(*stack_a) > 3
+	&& !is_sorted(*stack_a))
+	{
+		if ((*stack_a)->i <= pivot)
+			pb(stack_a, stack_b);
+		else
+			ra(stack_a);
+	}
+	return (quick_sort(stack_a, stack_b));
+	// int	mid;
+	// int	stack_len;
+
+	// stack_len = ft_stacklen(*stack_a);
+	// stack_len--;
+	// mid = stack_len / 2;
+	// print_stack(*stack_a);
+	// while (stack_len > 3)
+	// {
+	// 	// ft_printf("----------------------\nstacklen: %d\n", stack_len);
+	// 	if (stack_len > mid)
+	// 	{
+	// 		if ((*stack_a)->i <= mid)
+	// 		{
+	// 			ft_printf("PB n: %d, i: %d |	^%d\n", (*stack_a)->n, (*stack_a)->i, mid);
+	// 			pb(stack_a, stack_b);
+	// 			stack_len--;
+	// 		}
+	// 		else
+	// 		{
+	// 			ft_printf("%sRA n: %d, i: %d |	^%d%s\n", GREEN, (*stack_a)->n, (*stack_a)->i, mid, RESET_COLOR);
+	// 			ra(stack_a);
+	// 		}
+	// 	}
+	// 	else
+	// 	{
+	// 		mid /= 2;
+	// 		set_idx(stack_len, *stack_a);
+	// 		// ft_printf("mid: %d\n", mid);
+	// 	}
+	// }
 }
 
 void	do_dbl_rot_amnt(int amnt, t_stack *cheapest, t_stack **a, t_stack **b)
@@ -181,8 +219,9 @@ void	sort_big(t_stack **stack_a, t_stack **stack_b)
 	// t_stack	*head_a;
 	// t_stack	*head_b;
 
-	quick_sort(ft_stacklen(*stack_a), stack_a, stack_b);
-	sort3(stack_a);
+	quick_sort(stack_a, stack_b);
+	// sort3(stack_a);
+	// ft_printf("b len: %d\n", ft_stacklen(*stack_b));
 	while (ft_stacklen(*stack_b) > 0)
 		turk_sort(stack_a, stack_b);
 	// ft_printf("%sAFTER TURK%s\n", YELLOW, RESET_COLOR);

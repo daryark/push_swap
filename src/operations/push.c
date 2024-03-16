@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 17:04:06 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/08 12:45:53 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/16 03:16:11 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,3 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 	if (push (stack_a, stack_b))
 		ft_printf ("pb\n");
 }
-
-
