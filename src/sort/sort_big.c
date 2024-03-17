@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 16:24:16 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/17 23:26:13 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/18 00:08:52 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -272,3 +272,11 @@ void	sort_big(t_stack **stack_a, t_stack **stack_b)
 	ft_stackclean(stack_a);
 	ft_stackclean(stack_b);
 }
+
+//clean comments
+//clean not needed files and checkers OR - put them into separate folder only for them
+//divide the functions into understandable named files
+//check and clean header file
+//check for unused or static functions
+//think about final cost fn and double rots in here, if i can modify it better
+//*write the checker
