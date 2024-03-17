@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 11:54:49 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/11 12:23:10 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/16 22:11:28 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_error(char *message)
 {
-	ft_printf("%s%s%s\n", RED, message, RESET_COLOR);
+	write(1, message, 5);
+	// ft_printf("%s%s%s\n", RED, message, RESET_COLOR);
 	exit(EXIT_FAILURE);
 }
 

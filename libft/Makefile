@@ -37,9 +37,8 @@ OBJS += $(SRCS_GNL:.c=.o)
 OBJ_P = $(addprefix $(OBJ_F), $(OBJS))
 
 NAME = libft.a
-CFLAGS = -Wall -Wextra -Werror $(DEPFLAGS)
+CFLAGS = -Wall -Wextra -Werror $(DEPFLAGS) -fPIC
 DEPFLAGS = -MP -MMD
-FSANITIZE = -fsanitize=address
 
 
 
@@ -57,7 +56,7 @@ $(NAME): $(OBJ_P)
 
 $(OBJ_F)%.o: %.c
 	@mkdir -p $(@D)
-	@$(CC) $(CFLAGS) $(FSANITIZE) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf "$(GREEN). $(RESET_COLOR)"
 
 clean:
