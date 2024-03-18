@@ -15,7 +15,6 @@ OBJ_F = obj/
 
 CC = gcc
 DEPFLAGS = -MMD -MP
-FSANITIZE = -fsanitize=address
 CFLAGS = -Wall -Wextra -Werror -g $(DEPFLAGS)
 
 LIBFT = libft
@@ -31,12 +30,12 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@echo "\n"
 	$(MAKE) -C $(LIBFT);
-	$(CC) -o $@ $^ $(LIBFLAGS) $(FSANITIZE)
+	$(CC) -o $@ $^ $(LIBFLAGS)
 	@echo "$(GREEN)\n———————————✣ PUSH SWAP COMPILED ✣———————————\n$(RESET_COLOR)"
 
 $(OBJ_F)%.o: %.c
 	mkdir -p $(@D)
-	$(CC) $(CFLAGS) $(FSANITIZE) -c $^ -o $@
+	$(CC) $(CFLAGS) -c $^ -o $@
 	@printf "$(GREEN). $(RESET_COLOR)"
 
 clean:
@@ -51,7 +50,4 @@ fclean: clean
 
 re: fclean all
 
-val:
-	valgrind --leak-check=full ./$(NAME)
-
-.PHONY: all clean fclean re val
+.PHONY: all clean fclean re
