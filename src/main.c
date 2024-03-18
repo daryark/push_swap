@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 21:35:06 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/16 22:46:23 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/18 18:44:09 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	ft_process(char **av)
 	int			i;
 	long long	n;
 	t_stack		*stack_a;
-	t_stack		*node;
 
 	stack_a = NULL;
 	i = -1;
@@ -26,15 +25,9 @@ void	ft_process(char **av)
 		if (ft_is_numeric(av[i]))
 			ft_error("Error");
 		n = ft_atol(av[i]);
-		if (has_dup(stack_a, n) || not_int_range(n))
-			ft_error("Error dup || not in range");
-		node = ft_stacknew(n);
-		if (!node)
-		{
-			ft_stackclean(&stack_a);
-			return ;
-		}
-		ft_stack_addback(&stack_a, node);
+		if (not_int_range(n) || has_dup(stack_a, n))
+			ft_error("Error");
+		ft_new_node_back(&stack_a, n);
 		if (!stack_a)
 			return ;
 	}
@@ -44,7 +37,6 @@ void	ft_process(char **av)
 		ft_stackclean(&stack_a);
 	}
 }
-
 
 int	main(int ac, char **av)
 {

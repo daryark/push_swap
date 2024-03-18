@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:49:29 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/07 13:28:14 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/18 16:32:22 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ int	swap(t_stack **stack)
 
 	if ((*stack) == NULL || (*stack)->next == NULL)
 		return (0);
-	prev_head = *stack; //preserve head;
-	*stack = (*stack)->next; //move to new head
-	prev_head->next = (*stack)->next; //prev head next is third elem
-	(*stack)->next = prev_head; //new head next reassign to prev head
+	prev_head = *stack;
+	*stack = (*stack)->next;
+	prev_head->next = (*stack)->next;
+	(*stack)->next = prev_head;
 	return (1);
 }
 

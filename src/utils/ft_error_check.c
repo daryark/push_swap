@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 11:54:49 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/16 22:11:28 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/18 18:45:33 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	ft_error(char *message)
 {
-	write(1, message, 5);
-	// ft_printf("%s%s%s\n", RED, message, RESET_COLOR);
+	ft_printf("%s", RED);
+	write(2, message, 5);
+	ft_printf("%s\n", RESET_COLOR);
 	exit(EXIT_FAILURE);
 }
 
@@ -39,7 +40,7 @@ int	has_dup(t_stack *stack_a, long n)
 	return (0);
 }
 
-int	not_int_range(long n)
+int	not_int_range(long long n)
 {
 	return (n < INT_MIN || n > INT_MAX);
 }

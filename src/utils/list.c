@@ -6,11 +6,26 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 19:44:47 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/17 15:24:03 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/18 18:46:26 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
+
+void	ft_new_node_back(t_stack **stack, int n)
+{
+	t_stack		*node;
+
+	node = ft_stacknew(n);
+	if (!node)
+	{
+		ft_stackclean(stack);
+		return ;
+	}
+	ft_stack_addback(stack, node);
+	if (!stack)
+		return ;
+}
 
 t_stack	*ft_stacknew(int n)
 {
@@ -45,16 +60,15 @@ void	ft_stack_addback(t_stack **stack, t_stack *new)
 	}
 }
 
-int	ft_stacklen(t_stack *stack)
+void	ft_stackclean(t_stack **stack)
 {
-	int	len;
+	t_stack	*tmp;
 
-	len = 0;
-	while (stack)
+	while (*stack)
 	{
-		len++;
-		stack = stack->next;
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
 	}
-	// ft_printf("len: %d\n", len);
-	return (len);
+	*stack = NULL;
 }
