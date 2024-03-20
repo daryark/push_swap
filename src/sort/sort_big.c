@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 16:24:16 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/18 16:33:54 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/20 15:53:19 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,3 @@ void	sort_big(t_stack **stack_a, t_stack **stack_b)
 		do_rot_a_amnt(find_min_node(*stack_a), stack_a);
 	}
 }
-
-//*divide the functions into understandable named files
-//*check and clean header file
-//*check for unused or static functions
-//*think about final cost fn and double rots in here, if i can modify it better
-//**write the checkerBONUS

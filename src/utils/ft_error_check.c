@@ -6,7 +6,7 @@
 /*   By: dyarkovs <dyarkovs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 11:54:49 by dyarkovs          #+#    #+#             */
-/*   Updated: 2024/03/18 18:45:33 by dyarkovs         ###   ########.fr       */
+/*   Updated: 2024/03/20 15:51:22 by dyarkovs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	ft_is_numeric(char *s)
 {
 	if (*s && (*s == '-' || *s == '+'))
 		s++;
+	if (!*s)
+		return (1);
 	while (*s && ft_isdigit(*s))
 		s++;
 	return (*s != '\0');
